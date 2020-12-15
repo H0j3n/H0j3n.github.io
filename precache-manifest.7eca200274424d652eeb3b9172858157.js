@@ -1,39 +1,39 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "33e6ecf8144a0944964b7ae71f8215b2",
+    "revision": "7ab8054e382833aa7f854315262e0dc1",
     "url": "/index.html"
   },
   {
-    "revision": "efe633e9a6e4626e3529",
+    "revision": "d2ec0755a6ef50c98e60",
     "url": "/static/css/3.3a26ebde.chunk.css"
   },
   {
-    "revision": "526b11b24a4a6d5da645",
+    "revision": "320207715a48cd8612bf",
     "url": "/static/css/4.ee2a0142.chunk.css"
   },
   {
-    "revision": "480126603798c6d2c884",
+    "revision": "5a74ba70f62333c88e34",
     "url": "/static/css/main.39a8036f.chunk.css"
   },
   {
-    "revision": "7cba9992829b11bc7409",
-    "url": "/static/js/2.c121f5f4.chunk.js"
+    "revision": "83ed228b05d4210442f5",
+    "url": "/static/js/2.479146fa.chunk.js"
   },
   {
-    "revision": "efe633e9a6e4626e3529",
-    "url": "/static/js/3.3fc742f1.chunk.js"
+    "revision": "d2ec0755a6ef50c98e60",
+    "url": "/static/js/3.a486a5bb.chunk.js"
   },
   {
-    "revision": "526b11b24a4a6d5da645",
-    "url": "/static/js/4.6d4e2186.chunk.js"
+    "revision": "320207715a48cd8612bf",
+    "url": "/static/js/4.d70b0645.chunk.js"
   },
   {
-    "revision": "480126603798c6d2c884",
-    "url": "/static/js/main.b3ec4915.chunk.js"
+    "revision": "5a74ba70f62333c88e34",
+    "url": "/static/js/main.3db5aa28.chunk.js"
   },
   {
-    "revision": "7f56105a35860d998b49",
-    "url": "/static/js/runtime-main.b8bf0ca8.js"
+    "revision": "45632415a42e943f6259",
+    "url": "/static/js/runtime-main.3e0f4c57.js"
   },
   {
     "revision": "21f233e19402cc4a66866a7f31191f0d",
@@ -96,6 +96,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/nextuLogo.829ad0a1.webp"
   },
   {
+    "revision": "53e2703353705699c0465885a5272aac",
+    "url": "/static/media/none.53e27033.jpg"
+  },
+  {
     "revision": "c1a95f7335cbfb730b937e19e8830a53",
     "url": "/static/media/programmer.c1a95f73.svg"
   },
@@ -106,6 +110,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ee62cb58630f29a6e6201b49d4c03728",
     "url": "/static/media/pwaLogo.ee62cb58.webp"
+  },
+  {
+    "revision": "20664804851efcb1d6d18b1e6f0d5c3e",
+    "url": "/static/media/pwntilldawn.20664804.webp"
   },
   {
     "revision": "4b2938b9f5ea2f1ddbd45dccaff628bc",
