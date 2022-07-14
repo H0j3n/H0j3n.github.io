@@ -6,8 +6,8 @@ lang: en
 prefer_datetime_locale:
 timezone: Asia/Kuala_Lumpur
 title: $(H0j3n)                          # the main title
-tagline: Knowledge sharing related to Cybersecurity  # it will display as the sub-title
-description: >-                        # used by seo meta and the atom feed
+tagline: Knowledge sharing related to Cybersecurity
+description: >-
   Knowledge sharing related to Cybersecurity
 url: 'https://H0j3n.github.io'
 github:
