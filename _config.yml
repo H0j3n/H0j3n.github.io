@@ -16,7 +16,7 @@ lang: en
 prefer_datetime_locale:
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone: Asia/Shanghai
+timezone: Asia/Kuala_Lumpur
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
@@ -29,13 +29,13 @@ description: >-                        # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ''
+url: 'https://h0j3n.github.io'
 
 github:
-  username: github_username             # change to your github username
+  username: H0j3n             # change to your github username
 
 twitter:
-  username: twitter_username            # change to your twitter username
+  username: H0j3n            # change to your twitter username
 
 social:
   # Change to your full name.
