@@ -1,7 +1,7 @@
 ---
 title: Pwnable.kr - fd (Toddler’s Bottle)
 author: H0j3n
-date: 2023-02-11 00:00:00
+date: 2023-02-10 00:00:00
 categories: [Pwn]
 tags: [Pwn]
 render_with_liquid: false
