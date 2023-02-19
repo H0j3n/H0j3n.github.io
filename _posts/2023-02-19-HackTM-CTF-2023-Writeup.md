@@ -38,8 +38,8 @@ In `util.php`, the `file_get_contents` PHP function is used to retrieve a user's
 class Profile {
 	public function __toString() {
 			// ------snip------
-	        $picture = base64_encode(file_get_contents($this->picture_path));
-	        // ------snip------
+			$picture = base64_encode(file_get_contents($this->picture_path));
+			// ------snip------
 	    }
 }
 ```
