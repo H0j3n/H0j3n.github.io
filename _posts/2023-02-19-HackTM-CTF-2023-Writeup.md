@@ -17,9 +17,12 @@ This write-up serves as a personal reference and a tool for me to practice CTF. 
 > 1. No comments
 > 2. Semi-working authentication system
 > 3. Lots of random checks slowing down the entire website honestly (i don't know what's going on so i'm not touching it)
+> 
 > To mitigate that, we made it such that only you can view your own posts. No one
 can hack us now >:)
+> 
 > Link: [http://34.141.16.87:30000/](http://34.141.16.87:30000/)
+> 
 > File: `dist.zip`
 
 We received a file named `dist.zip`, which includes a dockerfile that contains a `COPY` function to transfer the contents of `./chal/flag.txt` to `/02d92f5f-a58c-42b1-98c7-746bbda7abe9/flag.txt`
