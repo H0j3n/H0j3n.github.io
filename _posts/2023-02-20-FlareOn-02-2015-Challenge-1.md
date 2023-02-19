@@ -24,11 +24,11 @@ Password: `flare`
 
 When you open the `Flare-On_start_2015.exe `, a license agreement will appear that you will need to accept in order to proceed.
 
-![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/6_flareon2_1/flareon02_1_1.png)
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/6_flareon02_1/flareon02_1_1.png)
 
 After accepting the license agreement, the program will prompt you to choose a destination path where you want to extract the contents.
 
-![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/6_flareon2_1/flareon02_1_2.png)
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/6_flareon02_1/flareon02_1_2.png)
 
 After extracting the contents, you will find a file named `i_am_happy_you_are_to_playing_the_flareon_challenge.exe`
 
