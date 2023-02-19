@@ -39,13 +39,13 @@ i_am_happy_you_are_to_playing_the_flareon_challenge.exe: PE32 executable (consol
 
 ##### References
 
-1. https://secwriteups.blogspot.com/2016/08/flare-2015-challenge-1.html
-2. https://www.ghettoforensics.com/2015/09/solving-2015-flare-on-challenges.html
-3. https://www.aldeid.com/wiki/The-FLARE-On-Challenge-2015/Challenge-1
-4. https://github.com/fareedfauzi/Flare-On-Challenges/blob/master/Write-ups/2015/2015solution1.pdf
-5. https://m.alvar.es/2015/10/fireeye-flareon-2015-challenges-1-3.html?m=1
-6. http://nieluj.github.io/flareon2/
-7. http://camelinc.info/blog/2015/08/FLARE-on-Challenge-2015/
-8. https://www.tophertimzen.com/blog/flareOn/
-9. https://blog.wirhabenstil.de/2015/09/09/fireeye-flare-challenge-2015-write-up-level-1/
-10. https://blog.csdn.net/weixin_53349587/article/details/122300468
+1. [https://secwriteups.blogspot.com/2016/08/flare-2015-challenge-1.html](https://secwriteups.blogspot.com/2016/08/flare-2015-challenge-1.html)
+2. [https://www.ghettoforensics.com/2015/09/solving-2015-flare-on-challenges.html](https://www.ghettoforensics.com/2015/09/solving-2015-flare-on-challenges.html)
+3. [https://www.aldeid.com/wiki/The-FLARE-On-Challenge-2015/Challenge-1](https://www.aldeid.com/wiki/The-FLARE-On-Challenge-2015/Challenge-1)
+4. [https://github.com/fareedfauzi/Flare-On-Challenges/blob/master/Write-ups/2015/2015solution1.pdf](https://github.com/fareedfauzi/Flare-On-Challenges/blob/master/Write-ups/2015/2015solution1.pdf)
+5. [https://m.alvar.es/2015/10/fireeye-flareon-2015-challenges-1-3.html](https://m.alvar.es/2015/10/fireeye-flareon-2015-challenges-1-3.html)
+6. [http://nieluj.github.io/flareon2/](http://nieluj.github.io/flareon2/)
+7. [http://camelinc.info/blog/2015/08/FLARE-on-Challenge-2015/](http://camelinc.info/blog/2015/08/FLARE-on-Challenge-2015/)
+8. [https://www.tophertimzen.com/blog/flareOn/](https://www.tophertimzen.com/blog/flareOn/)
+9. [https://blog.wirhabenstil.de/2015/09/09/fireeye-flare-challenge-2015-write-up-level-1/](https://blog.wirhabenstil.de/2015/09/09/fireeye-flare-challenge-2015-write-up-level-1/)
+10. [https://blog.csdn.net/weixin_53349587/article/details/122300468](https://blog.csdn.net/weixin_53349587/article/details/122300468)
