@@ -37,6 +37,33 @@ After extracting the contents, you will find a file named `i_am_happy_you_are_to
 i_am_happy_you_are_to_playing_the_flareon_challenge.exe: PE32 executable (console) Intel 80386, for MS Windows
 ```
 
+When we run the program, it prompts us to enter a password. However, if we enter the incorrect password, the program outputs the message '**You are failure**'.
+
+```cs
+PS > .\i_am_happy_you_are_to_playing_the_flareon_challenge.exe
+Let's start out easy
+Enter the password>flareon
+You are failure
+```
+
+I'm going to open it with Ghidra. If you encounter an issue with a missing OpenJDK 17 installation on your Windows system, you can download it from this website: [https://learn.microsoft.com/en-us/java/openjdk/download](https://learn.microsoft.com/en-us/java/openjdk/download)
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/6_flareon02_1/flareon02_1_3.png)
+
+Based on the decompiled entry function provided, the XOR operation performed in the code snippet will iterate over each byte of the user's input, XOR it with the hexadecimal value `0x7d`, and compare the result with the corresponding byte in another variable.
+
+Let's extract all the information we need and use python to get our flag.
+
+```python
+stored = b'\x1f\x08\x13\x13\x04\x22\x0e\x11\x4d\x0d\x18\x3d\x1b\x11\x1c\x0f\x18\x50\x12\x13\x53\x1e\x12\x10'
+flag = ""
+for i in stored:
+	flag+=chr(i^0x7d)
+print(flag)
+```
+
+**Flag :** `bunny_sl0pe@flare-on.com`
+
 ##### References
 
 1. [https://secwriteups.blogspot.com/2016/08/flare-2015-challenge-1.html](https://secwriteups.blogspot.com/2016/08/flare-2015-challenge-1.html)
