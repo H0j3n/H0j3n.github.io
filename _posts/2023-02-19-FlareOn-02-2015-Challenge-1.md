@@ -39,7 +39,7 @@ i_am_happy_you_are_to_playing_the_flareon_challenge.exe: PE32 executable (consol
 
 When we run the program, it prompts us to enter a password. However, if we enter the incorrect password, the program outputs the message '**You are failure**'.
 
-```cs
+```
 PS > .\i_am_happy_you_are_to_playing_the_flareon_challenge.exe
 Let's start out easy
 Enter the password>flareon
