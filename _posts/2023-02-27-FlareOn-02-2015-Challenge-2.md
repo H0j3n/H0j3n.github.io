@@ -66,6 +66,10 @@ I tried to set breakpoint at the EDI and jump to the hex view. We found these va
 AF AA AD EB AE AA EC A4 BA AF AE AA 8A C0 A7 B0 BC 9A BA A5  A5 BA AF B8 9D B8 F9 AE 9D AB B4 BC B6 B3 90 9A A8 
 ```
 
+Some operation involve inside `loc_4010A2` such as `AND`, `XOR` and `ROL`.
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/7_flareon02_2/flareon02_2_5.png)
+
 ##### A. Solve with Python Script
 
 **Python script (Reverse):**
