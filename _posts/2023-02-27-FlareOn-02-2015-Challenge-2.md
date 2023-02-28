@@ -100,6 +100,12 @@ print(flags)
 
 **Flag :** `a_Little_b1t_harder_plez@flare-on.com`
 
+##### B. Solve with Angr
+
+##### C. Solve with Pintool
+
+##### D. Solve with IDA Python 
+
 ##### References
 
 1. [https://github.com/fareedfauzi/Flare-On-Challenges/blob/master/Write-ups/2015/2015solution2.pdf](https://github.com/fareedfauzi/Flare-On-Challenges/blob/master/Write-ups/2015/2015solution2.pdf)
