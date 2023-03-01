@@ -70,8 +70,6 @@ Some operation involve inside `loc_4010A2` such as `AND`, `XOR` and `ROL`.
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/7_flareon02_2/flareon02_2_5.png)
 
-##### A. Solve with Python Script
-
 **Python script (Reverse):**
 
 ```python
@@ -99,12 +97,6 @@ print(flags)
 ```
 
 **Flag :** `a_Little_b1t_harder_plez@flare-on.com`
-
-##### B. Solve with Angr
-
-##### C. Solve with Pintool
-
-##### D. Solve with IDA Python 
 
 ##### References
 
