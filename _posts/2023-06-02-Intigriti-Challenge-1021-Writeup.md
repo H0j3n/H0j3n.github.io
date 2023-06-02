@@ -1,7 +1,7 @@
 ---
 title: Intigriti - Challenge 1021 Writeup
 author: H0j3n
-date: 2023-006-02 00:00:00
+date: 2023-06-02 00:00:00
 categories: [ctf]
 tags: [ctf,writeup,intigriti]
 render_with_liquid: false
