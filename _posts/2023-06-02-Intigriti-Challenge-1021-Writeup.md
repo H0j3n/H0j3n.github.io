@@ -50,6 +50,43 @@ To verify this, we can send a simple value such as **"POC"** in the `html` param
 <div id="html" class="text"><h1 class="light">POC</div>
 ```
 
+Let's attempt **HTML injection** by testing with a basic HTML snippet to see if we can successfully inject HTML code into the page. Here's an example of a test code:
+
+- [https://challenge-1021.intigriti.io/challenge/challenge.php?html=%3Ch1%3E%3Cs%3EPOC%3C/s%3E%3C/h1%3E](https://challenge-1021.intigriti.io/challenge/challenge.php?html=%3Ch1%3E%3Cs%3EPOC%3C/s%3E%3C/h1%3E)
+
+```html
+<h1><s>POC</s></h1>
+```
+
+By sending this code as the value for the **html** parameter, we can verify the HTML injection occurs.
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/9_intigriti/intigriti_1021_4.png)
+
+```html
+<div id="html" class="text"><h1 class="light"><h1><s>POC</s></h1></div>
+```
+
+However, it seems that even though the `<script>` tag is not filtered, a simple XSS code like below does not execute as expected.
+
+```html
+<div id="html" class="text"><h1 class="light"><script>alert(1)</script></div>
+```
+
+Upon inspecting the element, we can observe that there are a few errors present.
+
+- `Content Security Policy`
+- `Uncaught TypeError: document.getElementById(...) is null`
+- `Uncaught SyntaxError: expected expression, got ')'`
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/9_intigriti/intigriti_1021_5.png)
+
+Let's take a look at each of these errors and identify why it give us an error.
+
+##### Content Security Policy (CSP)
+
+##### Uncaught TypeError
+
+##### Uncaught SyntaxError
 
 ### References
 
