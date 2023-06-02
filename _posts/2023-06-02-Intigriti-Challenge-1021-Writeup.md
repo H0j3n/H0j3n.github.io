@@ -11,7 +11,7 @@ This is my first attempt at the intigriti challenge. I'm writing this to learn a
 
 ## Intigriti - Challenge 1021
 
-![[intigriti_1021_1.png]]
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/9_intigriti/intigriti_1021_1.png)
 
 Link to challenge: [https://challenge-1021.intigriti.io/](https://challenge-1021.intigriti.io/)
 
@@ -23,7 +23,7 @@ By viewing the page source, we can observe that the **iframe** leads to `challen
 </div>
 ```
 
-![[intigriti_1021_2.png]]
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/9_intigriti/intigriti_1021_2.png)
 
 Link to **challenge.php**: [https://challenge-1021.intigriti.io/challenge/challenge.php](https://challenge-1021.intigriti.io/challenge/challenge.php)
 
@@ -44,7 +44,7 @@ To verify this, we can send a simple value such as **"POC"** in the `html` param
 
 - [https://challenge-1021.intigriti.io/challenge/challenge.php?html=POC](https://challenge-1021.intigriti.io/challenge/challenge.php?html=POC)
 
-![[intigriti_1021_3.png]]
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/9_intigriti/intigriti_1021_3.png)
 
 ```html
 <div id="html" class="text"><h1 class="light">POC</div>
