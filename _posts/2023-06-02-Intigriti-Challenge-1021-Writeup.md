@@ -9,7 +9,7 @@ render_with_liquid: false
 
 This is my first attempt at the intigriti challenge. I'm writing this to learn and share my experience with others. I've included information from various sources to provide a comprehensive overview.
 
-## Intigriti - Challenge 1021
+# Intigriti - Challenge 1021
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/9_intigriti/intigriti_1021_1.png)
 
@@ -82,12 +82,12 @@ Upon inspecting the element, we can observe that there are a few errors present.
 
 Let's take a look at each of these errors and identify why it give us an error.
 
-##### Content Security Policy (CSP)
+## Content Security Policy (CSP)
 
-##### Uncaught TypeError
+## Uncaught TypeError
 
-##### Uncaught SyntaxError
+## Uncaught SyntaxError
 
-### References
+# References
 
 1. [https://blog.isiraadithya.com/intigriti-1021-xss-challenge-solution-writeup/](https://blog.isiraadithya.com/intigriti-1021-xss-challenge-solution-writeup/)
