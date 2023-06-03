@@ -175,6 +175,8 @@ Since the parameter `xss` was not provided, the value of `e` will be `null`. The
 
 So now we know the parameter `xss` will be a useful for us to get an XSS. 
 
+### Walkthrough Solution
+
 ## References
 
 1. [https://blog.isiraadithya.com/intigriti-1021-xss-challenge-solution-writeup/](https://blog.isiraadithya.com/intigriti-1021-xss-challenge-solution-writeup/)
