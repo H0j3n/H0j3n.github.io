@@ -216,7 +216,7 @@ Since we can manipulate the 4 characters. There are 2 ways that we can try and w
 - Make the value stored into a variable. Example: `a=')]}'`
 - Ensure the value `)]}'` will not causing any errors even without storing it.
 
-#### Solution 1
+### Solution 1
 
 The first solution we want to try store it into a variable. Fortunately, all the tags will automatically close, so we only need to focus on the tags that may contain a single quote ('). The payload I initially attempted is as follows.
 
@@ -248,7 +248,7 @@ The final payload we just need to add necessary codes to execute our XSS payload
 <script type="text/javascript">a='>)]}';alert(document.domain)</script>
 ```
 
-#### Solution 2
+### Solution 2
 
 In the second solution, our goal is to ensure that our payload does not break the JavaScript code, while also do not need storing the value in a variable. To achieve this, let's reassess our situation. Assume we have the following code:
 
