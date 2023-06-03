@@ -131,7 +131,49 @@ As we can observe, only the XSS in the first Proof of Concept (POC) will be exec
 
 ### Uncaught TypeError
 
+The error occurs because the web is attempting to retrieve the element with the id **"lock,"** but it cannot be found, resulting in the value becoming null.
+
+```html
+<script nonce="afedac0a9a5507ad03f76ca4f5d76a81">
+document.getElementById('lock').onclick = () =>
+	{document.getElementById('lock').classList.toggle('unlocked');
+}</script>
+```
+
+Despite encountering this error, we can still proceed with solving the challenge. The absence of the **"lock"** element and the resulting null value does not stop us to find a solution.
+
 ### Uncaught SyntaxError
+
+This error occurs within the snippet of JavaScript code provided below:
+
+```html
+<script nonce="afedac0a9a5507ad03f76ca4f5d76a81">
+      window.addEventListener("DOMContentLoaded", function () {
+        e = `)]}'` + new URL(location.href).searchParams.get("xss");
+        c = document.getElementById("body").lastElementChild;
+        if (c.id === "intigriti") {
+          l = c.lastElementChild;
+          i = l.innerHTML.trim();
+          f = i.substr(i.length - 4);
+          e = f + e;
+        }
+        let s = document.createElement("script");
+        s.type = "text/javascript";
+        s.appendChild(document.createTextNode(e));
+        document.body.appendChild(s);
+      });
+</script>
+```
+
+Since the parameter `xss` was not provided, the value of `e` will be `null`. The result variable will hold the value `)]}'`. Consequently, when attempting to find an element with the id **"intigriti"** it won't be found in the page source. Therefore, we can assume that the generated script element will resemble the following:
+
+```html
+<script type="text/javascript">
+	<script type="text/javascript">)]}'null</script>
+</script>
+```
+
+So now we know the parameter `xss` will be a useful for us to get an XSS. 
 
 ## References
 
