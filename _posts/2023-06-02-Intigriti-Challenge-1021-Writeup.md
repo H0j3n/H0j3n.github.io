@@ -84,6 +84,51 @@ Let's take a look at each of these errors and identify why it give us an error.
 
 ### Content Security Policy (CSP)
 
+In the response headers, there is no indicator of CSP implemented. But we can see in the page source how the web page implemented the CSP.
+
+```html
+<meta
+  http-equiv="Content-Security-Policy"
+  content="default-src 'none'; 
+	  script-src 'unsafe-eval' 'strict-dynamic' 'nonce-a5653f86ab0d00e7ea5297f7264c43c0';
+	  style-src 'nonce-51070e634c401773866289cb83ad269e'"
+/>
+```
+
+While exploring this CSP further, I came across some interesting information about the usage of `strict-dynamic` in **Content Security Policy (CSP)**. You can find this information in [here](https://exploited.cz/xss/csp/strict.php?inserted=parser)
+
+> `strict-dynamic`: Allows script which executes on a page to load more scripts via non-"HTML-parser-inserted" script elements using document.createElement('script'); or similar (CSP3 and above)
+{: .prompt-info }
+
+To have a quick check for `strict-dynamic`, we can try compare with and without using `document.createElement` to get an XSS.
+
+```html
+<html lang="en">
+  <head>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'unsafe-eval' 'strict-dynamic' 'nonce-a5653f86ab0d00e7ea5297f7264c43c0'; style-src 'nonce-51070e634c401773866289cb83ad269e'"
+    />
+  </head>
+  <body id="body">
+    <!-- POC (XSS) #1 -->
+    <script nonce="a5653f86ab0d00e7ea5297f7264c43c0">
+        let s = document.createElement("script");
+        s.appendChild(document.createTextNode("alert('Using createElement script')"));
+        document.body.appendChild(s);
+    </script>
+    <!-- POC (XSS) #2 -->
+    <script nonce-"a5653f86ab0d00e7ea5297f7264c43c0">
+        alert('Without createElement script');
+    </script>
+  </body>
+</html>
+```
+
+As we can observe, only the XSS in the first Proof of Concept (POC) will be executed successfully, whereas the second one will be prevented from executing due to the Content Security Policy (CSP).. We will come back to this topic in the solution part later.
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/9_intigriti/intigriti_1021_6.png)
+
 ### Uncaught TypeError
 
 ### Uncaught SyntaxError
