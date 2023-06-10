@@ -203,7 +203,7 @@ The variable `f` will contain the value **"tml>"** after using the **substr()** 
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/9_intigriti/intigriti_1021_7.png)
 
-The final value that can be obtained from  `document.createElement("script")` s as follows.
+The final value that can be obtained from  `document.createElement("script")` as follows.
 
 ```html
 <script type="text/javascript">tml>)]}'xss</script>
