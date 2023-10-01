@@ -8,6 +8,10 @@
 !.commitlintrc.json
 !.versionrc.json
 
+# Compressed files
+*.zip
+*.7z
+
 # bundler cache
 _site
 vendor
