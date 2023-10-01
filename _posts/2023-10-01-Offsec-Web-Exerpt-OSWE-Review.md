@@ -56,12 +56,51 @@ I scheduled my exam for Sunday, 24 September at 5 AM (Malaysia time). The main r
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/11_oswe_review/oswe_4.gif)
 
-After do some magic touch, it works for now atleast. I can only hope it will not suddenly turn off during the exam. 
+After do some magic touch, it works for now atleast. I can only hope it will not suddenly turn off during the exam. Before the exam, you need to ensure that you have checked all the necessary requirements before beginning your exam. As usual, all the information can be found on the Offsec website in [here](https://help.offsec.com/hc/en-us/articles/360046869951-WEB-300-Advanced-Web-Attacks-and-Exploitation-OSWE-Exam-Guide).
+
+The exam will last for 48 hours, as mentioned on the Offsec website. However, according to the website, the actual duration is 47 hours and 45 minutes. So mine started at 5 AM (September 24th) and end around 5 AM (September 26th). As stated in one of the [FAQs](https://help.offsec.com/hc/en-us/articles/360046869951-WEB-300-Advanced-Web-Attacks-and-Exploitation-OSWE-Exam-Guide#point-allocation) in Offsec website, you must achieve a minimum scope of **85 points** to pass the exam and you can get maximum of **100 points** available on the exam.
+
+I highly suggest for you to **READ** multiple times the [Exam Restrictions](https://help.offsec.com/hc/en-us/articles/360046869951-WEB-300-Advanced-Web-Attacks-and-Exploitation-OSWE-Exam-Guide#exam-restrictions). Also, to take note that you can't download **ANY** applications, files or source code from the exam environment to your local machine as its strictly forbidden.
+
+I utilize all of the 48 hours to get enough points to pass the exam. The most important thing is to ensure all of the evidence, commands, payloads already in your notes. I put all the steps and evidence in a Microsoft Word and use the [report template](https://www.offsec.com/awae/OSWE-Exam-Report.docx) provided by Offsec as my final report. I did mentioned in my OSEP review, I prefer Microsoft Word because it give you flexibility to customize your report and I love to add page break on every sub headers just to make your report looks nice. I also did refer to this[ OSWE Exam Report Template Markdown](https://github.com/noraj/OSCP-Exam-Report-Template-Markdown/blob/master/src/OSWE-exam-report-template_noraj_v1.md) owned by noraj and I highly recommend to check it out.
+
+During the exam, I also highly recommended for you to use the revert as many times as you can. Especially when you want to test your exploit, please revert it first then run the scripts. This will help you be more confident that your exploit is working fine on the target machine.
 
 
 ## Tips and Recommendation
 
+There are several platforms you can use to find answers to any of your questions before the actual exam. I will list all the platforms I used to gather information prior to the exam.
+
+1. [OffSec FAQs](https://help.offsec.com/hc/en-us/articles/360046418812-OSWE-Exam-FAQ)
+2. [Reddit - OSEP](https://www.reddit.com/r/oswe/)
+3. [OffSec - Discord](https://discord.com/invite/offsec)
+4. [OffSec - Forum](https://forums.offensive-security.com/)
+
+Thanks to the community, there are a lot of cheatsheets that you can refer to prepare for the OSWE.
+
+1. [OSWE Resources #1](https://jorgectf.gitbook.io/awae-oswe-preparation-resources/)
+2. [Exploit Writing](https://github.com/rizemon/exploit-writing-for-oswe)
+3. [Pentesterlab - CodeReview](https://pentesterlab.com/exercises/codereview/course)
+4. [OWASP CheatSheets](https://github.com/OWASP/CheatSheetSeries/blob/master/Index.md)
+5. [WhiteBox Pentest](https://github.com/computer-engineer/WhiteboxPentest)
+6. [0 Click HTB](https://github.com/brutuspt/0click_HTB/tree/master)
+7. [4 Vulnerable Web App](https://github.com/bmdyy?tab=repositories&q=oswe&type=&language=&sort=)
+8. [OSWE Resources #2](https://github.com/snoopysecurity/OSWE-Prep)
+
+While doing any OffSec Exam, I always rward myself with a break when I manage to increase my points. Usually I will take a break of atleast 1 hour once I've earned some points. Also, do utilize the debug machine and implement all the knowledge from the course materials with using WhiteBox/BlackBox testing. If you are stuck at something, allocate minimum of 3 hours and maximum of 5 hours to stop and start looking at different places.
+
+If you are looking for different kinds of reverse shell payload to generate in Python3, do check out my [EzpzShell](https://github.com/H0j3n/EzpzShell). I hope it will help you in some ways 😬
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/11_oswe_review/oswe_5.gif)
+
+
 ## What's next?
 
 ## Other OSWE Review
+
+1. [OSWE Review & Exam Preparation Guide](https://hub.schellman.com/blog/oswe-review-and-exam-preparation-guide)
+2. [InfosecWriteup - OSWE Exam Review and Tips](https://infosecwriteups.com/cert-oswe-exam-review-and-tips-ft-no-developer-background-candidate-1dad7f545155)
+3. [OSWE Guide in 2021](https://rayhan0x01.github.io/web/2021/04/12/awae-web-300-oswe-guide-2021.html?i=543)
+4. [An Honest OSWE 2023 Review](https://charchitverma100.medium.com/an-honest-oswe-2023-review-my-journey-preparation-and-exam-67d0adcbcde4)
+5. [OffSec - OSWE Review](https://www.offsec.com/offsec/offensive-security-awae-oswe-review/)
 
