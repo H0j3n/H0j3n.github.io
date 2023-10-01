@@ -34,7 +34,7 @@ The most important part is to ensure all scripts, notes, references are well-doc
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/11_oswe_review/oswe_2.png)
 
 
-> CTF - Folder where I put all the scripts I encounter while playing CTF
+> CTF - Folder where I put all the scripts I encountered while playing CTF
 {: .prompt-info }
 
 > FastCopy - Folder where I will put all the important function that I can easily copy to start my exploitation scripts
@@ -49,4 +49,12 @@ The most important part is to ensure all scripts, notes, references are well-doc
 But still, [CherryTree](https://www.giuspen.net/cherrytree/) will be the main app for my note taking 😁
 
 ![Alt text](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/11_oswe_review/oswe_3.png)
+
+## Exam
+
+## Tips and Recommendation
+
+## What's next?
+
+## Other OSWE Review
 
