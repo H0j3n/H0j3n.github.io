@@ -56,6 +56,7 @@ I scheduled my exam for Sunday, 24 September at 5 AM (Malaysia time). The main r
 
 ![](blob:https://tenor.com/04095e26-2f73-43c2-a2aa-8939501558d0)
 
+After do some magic touch, it works for now atleast. I can only hope it will not suddenly turn off during the exam. 
 
 
 ## Tips and Recommendation
