@@ -52,7 +52,7 @@ But still, [CherryTree](https://www.giuspen.net/cherrytree/) will be the main ap
 
 ## Exam
 
-I scheduled my exam on Sunday, 24 September at 5 AM (Malaysia time). The main reason why I chose 5 AM because I had just returned from Singapore after attending [Bsides Singapore](https://bsidessg.org/) on Saturday, 23 September. Fortunately, I made it back to Malaysia one day before the exam. I went to bed early, around 9 PM without touching my computer and when I woke up around 3.30 AM, my anxiety spiked because my computer suddently woudln't turn on.
+I scheduled my exam on Sunday, 24 September at 5 AM (Malaysia time). The main reason why I chose 5 AM because I had just returned from Singapore after attending [Bsides Singapore](https://bsidessg.org/) on Saturday, 23 September. Fortunately, I made it back to Malaysia one day before the exam. I went to bed early, around 9 PM without touching my computer and when I woke up around 3.30 AM, my anxiety spiked because my computer suddently wouldn't turn on.
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/11_oswe_review/oswe_4.gif)
 
