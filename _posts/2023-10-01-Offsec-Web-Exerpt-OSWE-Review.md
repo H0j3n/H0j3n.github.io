@@ -54,7 +54,7 @@ But still, [CherryTree](https://www.giuspen.net/cherrytree/) will be the main ap
 
 I scheduled my exam for Sunday, 24 September at 5 AM (Malaysia time). The main reason why I chose 5 AM because I had just returned from Singapore after attending Bsides Singapore on Saturday, 23 September. Fortunately, I made it back to Malaysia one day before the exam. I went to bed early, around 9 PM without touching my computer and when I woke up around 3.30 AM, my anxiety spiked because my computer suddently woudln't turn on.
 
-![](blob:https://tenor.com/04095e26-2f73-43c2-a2aa-8939501558d0)
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/11_oswe_review/oswe_4.gif)
 
 After do some magic touch, it works for now atleast. I can only hope it will not suddenly turn off during the exam. 
 
