@@ -40,7 +40,7 @@ The most important part is to ensure all scripts, notes, references are well-doc
 > FastCopy - Folder where I will put all the important function that I can easily copy to start my exploitation scripts
 {: .prompt-info }
 
-> HTB_Other - Folder where I put all the full chain exploitation scripts for HTB labs or any vulnerable web app I encountered in the internet
+> HTB_Others - Folder where I put all the full chain exploitation scripts for HTB labs or any vulnerable web app I encountered in the internet
 {: .prompt-info }
 
 > Labs - Folder where I put all the exploitation scripts for OSWE labs
