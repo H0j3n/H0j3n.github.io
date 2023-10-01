@@ -9,7 +9,7 @@ render_with_liquid: false
 
 ## Introduction
 
-After completing my OSEP exam in June, I didn't expect to take another Offsec certication so soon. But, my team won one the Asia Pacific Cyberattack Response Challenge 2023 and we were awarded Offsec vouchers as prizes. Thanks to [Cyber8lab](https://cyber8lab.com/) and [Offsec](https://www.offsec.com/) for sponsoring these prizes!
+After completing my OSEP exam in June, I didn't expect to take another Offsec certication so soon. But, my team won the Asia Pacific Cyberattack Response Challenge 2023 and we were awarded Offsec vouchers as prizes. Thanks to [Cyber8lab](https://cyber8lab.com/) and [Offsec](https://www.offsec.com/) for sponsoring these prizes!
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/11_oswe_review/oswe_1.png)
 
@@ -51,6 +51,12 @@ But still, [CherryTree](https://www.giuspen.net/cherrytree/) will be the main ap
 ![Alt text](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/11_oswe_review/oswe_3.png)
 
 ## Exam
+
+I scheduled my exam for Sunday, 24 September at 5 AM (Malaysia time). The main reason why I chose 5 AM because I had just returned from Singapore after attending Bsides Singapore on Saturday, 23 September. Fortunately, I made it back to Malaysia one day before the exam. I went to bed early, around 9 PM without touching my computer and when I woke up around 3.30 AM, my anxiety spiked because my computer suddently woudln't turn on.
+
+![](blob:https://tenor.com/04095e26-2f73-43c2-a2aa-8939501558d0)
+
+
 
 ## Tips and Recommendation
 
