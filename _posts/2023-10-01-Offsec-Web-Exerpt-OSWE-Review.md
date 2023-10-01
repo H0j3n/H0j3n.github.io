@@ -100,12 +100,9 @@ After sending my report on 26 September, I finally received the email saying tha
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/11_oswe_review/oswe_6.png)
 
- I have been enjoying doing various Web CTF challenges with my [M53](https://ctftime.org/team/211971/) team. Currently, I really enjoy doing research on web application and plan to delve deeper into this field moving forward. At the same time, I'm planning to allocate my time to study binary exploitation as preparation for OSED next year. I wish everyone best of luck with your OSWE certification!
-
+ I have been enjoying doing various Web CTF challenges with my [M53](https://ctftime.org/team/211971/) team. Currently, I interested to research on web application and plan to delve deeper into this field moving forward. At the same time, I'm planning to allocate my time to study binary exploitation as preparation for OSED next year. I wish everyone best of luck with your OSWE certification!
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/11_oswe_review/oswe_7.png)
-
-
 
 ## Other OSWE Review
 
