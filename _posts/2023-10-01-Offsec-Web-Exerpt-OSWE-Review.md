@@ -9,7 +9,7 @@ render_with_liquid: false
 
 ## Introduction
 
-After completing my OSEP exam in June, I didn't expect to take another Offsec certication so soon. But, my team won one the Asia Pacific Cyberattack Response Challenge 2023 and get an offsec voucher for each of us. Thank you to Cyber8lab and Offsec for sponsoring the prizes to the winner! 
+After completing my OSEP exam in June, I didn't expect to take another Offsec certication so soon. But, my team won one the Asia Pacific Cyberattack Response Challenge 2023 and we were awarded Offsec vouchers as prizes. Thanks to [Cyber8lab](https://cyber8lab.com/) and [Offsec](https://www.offsec.com/) for sponsoring these prizes!
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/10_osep_review/osep_1.png)
 
