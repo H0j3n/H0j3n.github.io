@@ -87,7 +87,7 @@ Thanks to the community, there are a lot of cheatsheets that you can refer to pr
 7. [4 Vulnerable Web App](https://github.com/bmdyy?tab=repositories&q=oswe&type=&language=&sort=)
 8. [OSWE Resources #2](https://github.com/snoopysecurity/OSWE-Prep)
 
-While doing any OffSec Exam, I always rward myself with a break when I manage to increase my points. Usually I will take a break of atleast 1 hour once I've earned some points. Also, do utilize the debug machine and implement all the knowledge from the course materials with using WhiteBox/BlackBox testing. If you are stuck at something, allocate minimum of 3 hours and maximum of 5 hours to stop and start looking at different places.
+While doing any OffSec Exam, I always reward myself with a break when I manage to increase my points. Usually I will take a break of atleast 1 hour once I've earned some points. Also, do utilize the debug machine and implement all the knowledge from the course materials with using WhiteBox/BlackBox testing. If you are stuck at something, allocate minimum of 3 hours and maximum of 5 hours to stop and start looking at different places.
 
 If you are looking for different kinds of reverse shell payload to generate in Python3, do check out my [EzpzShell](https://github.com/H0j3n/EzpzShell). I hope it will help you in some ways 😬
 
@@ -95,6 +95,17 @@ If you are looking for different kinds of reverse shell payload to generate in P
 
 
 ## What's next?
+
+After sending my report on 26 September, I finally received the email saying that I passed the exam on 28 September!
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/11_oswe_review/oswe_6.png)
+
+ I have been enjoying doing various Web CTF challenges with my [M53](https://ctftime.org/team/211971/) team. Currently, I really enjoy doing research on web application and plan to delve deeper into this field moving forward. At the same time, I'm planning to allocate my time to study binary exploitation as preparation for OSED next year. I wish everyone best of luck with your OSWE certification!
+
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/11_oswe_review/oswe_7.png)
+
+
 
 ## Other OSWE Review
 
