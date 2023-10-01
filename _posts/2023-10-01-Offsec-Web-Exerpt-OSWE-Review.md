@@ -62,7 +62,7 @@ The exam will last for 48 hours, as mentioned on the Offsec website. However, ac
 
 I highly suggest for you to **READ** multiple times the [Exam Restrictions](https://help.offsec.com/hc/en-us/articles/360046869951-WEB-300-Advanced-Web-Attacks-and-Exploitation-OSWE-Exam-Guide#exam-restrictions). Also, to take note that you can't download **ANY** applications, files or source code from the exam environment to your local machine as its strictly forbidden.
 
-I utilize all of the 48 hours to get enough points to pass the exam. The most important thing is to ensure all of the evidence, commands, payloads already in your notes. I put all the steps and evidence in a Microsoft Word and use the [report template](https://www.offsec.com/awae/OSWE-Exam-Report.docx) provided by Offsec as my final report. I did mentioned in my OSEP review, I prefer Microsoft Word because it give you flexibility to customize your report and I love to add page break on every sub headers just to make your report looks nice. I also did refer to this[ OSWE Exam Report Template Markdown](https://github.com/noraj/OSCP-Exam-Report-Template-Markdown/blob/master/src/OSWE-exam-report-template_noraj_v1.md) owned by noraj and I highly recommend to check it out.
+I utilize all of the 48 hours to get enough points to pass the exam. The most important thing is to ensure all of the evidence, commands, payloads already in your notes. I put all the steps and evidence in a Microsoft Word and use the [report template](https://www.offsec.com/awae/OSWE-Exam-Report.docx) provided by Offsec as my final report. I did mentioned in my [OSEP review](https://h0j3n.github.io/posts/Offensive-Security-Experienced-Pentester-OSEP-Review/), I prefer Microsoft Word because it give you flexibility to customize your report and I love to add page break on every sub headers just to make your report looks nice. I also did refer to this[ OSWE Exam Report Template Markdown](https://github.com/noraj/OSCP-Exam-Report-Template-Markdown/blob/master/src/OSWE-exam-report-template_noraj_v1.md) owned by noraj and I highly recommend to check it out.
 
 During the exam, I also highly recommended for you to use the revert as many times as you can. Especially when you want to test your exploit, please revert it first then run the scripts. This will help you be more confident that your exploit is working fine on the target machine.
 
@@ -72,7 +72,7 @@ During the exam, I also highly recommended for you to use the revert as many tim
 There are several platforms you can use to find answers to any of your questions before the actual exam. I will list all the platforms I used to gather information prior to the exam.
 
 1. [OffSec FAQs](https://help.offsec.com/hc/en-us/articles/360046418812-OSWE-Exam-FAQ)
-2. [Reddit - OSEP](https://www.reddit.com/r/oswe/)
+2. [Reddit - OSWE](https://www.reddit.com/r/oswe/)
 3. [OffSec - Discord](https://discord.com/invite/offsec)
 4. [OffSec - Forum](https://forums.offensive-security.com/)
 
