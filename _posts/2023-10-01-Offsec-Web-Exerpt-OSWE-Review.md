@@ -27,9 +27,9 @@ Compared to the OSEP, the OSWE labs do not provide any flags for you to read and
 
 Personally, I found it quite overwhelming as each of the labs contains thousands lines of code. Therefore, it's important to take your time to understand and exploit the vulnerabilities. The OSWE materials include walkthroughs for each of the labs, so I mainly went through the materials first and then proceeded with the labs.
 
-During the first month, I managde to complete the first 5 modules with their labs and try to create an exploitation scripts for each of the labs. In the final month, I completed all the materials and some of the labs due to the time constarins that I have.
+During the first month, I manage to complete the first 5 modules with their labs and try to create an exploitation scripts for each of the labs. In the final month, I completed all the materials and some of the labs due to the time constraints that I have.
 
-The most important part is to ensure all scripts, notes, references are well-documented on your macihne. I'm using Visual Studio Code on my Kali machine to easily go through my exploitation scripts and notes which I can easily grep later using the following structure:
+The most important part is to ensure all scripts, notes, references are well-documented on your machine. I'm using Visual Studio Code on my Kali machine to easily go through my exploitation scripts and notes which I can easily grep later using the following structure:
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/11_oswe_review/oswe_2.png)
 
@@ -37,13 +37,13 @@ The most important part is to ensure all scripts, notes, references are well-doc
 > CTF - Folder where I put all the scripts I encounter while playing CTF
 {: .prompt-info }
 
-> FastCoy - Folder where I will put all the important function that I can easily copy to start my exploitation scripts
+> FastCopy - Folder where I will put all the important function that I can easily copy to start my exploitation scripts
 {: .prompt-info }
 
-> FastCoy - HTB_Other - Folder where I put all the full chain exploitation scripts for HTB labs or any vulenrable web machine I encounter in the internet
+> HTB_Other - Folder where I put all the full chain exploitation scripts for HTB labs or any vulnerable web app I encountered in the internet
 {: .prompt-info }
 
-> FastCoy - Labs - Folder where I put all the exploitation scripts for the labs in the OSWE labs
+> Labs - Folder where I put all the exploitation scripts for OSWE labs
 {: .prompt-info }
 
 But still, [CherryTree](https://www.giuspen.net/cherrytree/) will be the main app for my note taking 😁
