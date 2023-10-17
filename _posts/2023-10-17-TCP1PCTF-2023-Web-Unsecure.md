@@ -26,3 +26,17 @@ We received a zip file `dist.zip` with the source code of the web challenge.
 When we tried to browse the web link, we don't see much except a white page with sentence **"Welcome to my web app!"**
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/12_tcp1pctf2023_web_unsecure/TCP1PCTF_Unsecure_3.png)
+
+Looking at `index.php`, the code will check if cookies with name `cookie` is set. If set, it will `unserialize()` the cookies after base64 decode using `base64_code()`.
+
+```php
+<?php
+require("vendor/autoload.php");
+
+if (isset($_COOKIE['cookie'])) {
+    $cookie = base64_decode($_COOKIE['cookie']);
+    unserialize($cookie);
+}
+
+echo "Welcome to my web app!";
+```
