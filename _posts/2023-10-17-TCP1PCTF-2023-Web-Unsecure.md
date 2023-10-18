@@ -140,7 +140,7 @@ unserialize($cookie);
 
 That's when I realize we need to chain all the gadget to get **RCE**. Thanks to my team members in [M53](https://ctftime.org/team/211971/), I got some idea on how to chain the gadgets.
 
-This is the first solution my team member (vicevirus) tried but he mentioned this is wrong. We will get back to this at the end to explain the reason.
+This is the first solution my team member [@vicevirus](https://twitter.com/theddaus12) tried but he mentioned this is wrong. We will get back to this at the end to explain the reason.
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/12_tcp1pctf2023_web_unsecure/TCP1PCTF_Unsecure_5.png)
 
