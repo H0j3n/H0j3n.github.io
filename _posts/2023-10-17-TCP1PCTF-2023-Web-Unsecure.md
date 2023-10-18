@@ -165,7 +165,6 @@ $gadgetTwo = new \GadgetTwo\Echoers();
 $gadgetThree = new \GadgetThree\Vuln();
 
 // Setup GadgeThree
-// get an Vuln class instance
 $vuln = new \GadgetThree\Vuln();
 $reflection = new \ReflectionClass($gadgetThree);
 $property = $reflection->getProperty('waf1');
