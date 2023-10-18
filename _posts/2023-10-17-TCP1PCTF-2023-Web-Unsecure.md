@@ -213,9 +213,9 @@ curl "http://ctf.tcp1p.com:45678/" -b "cookie=TzoxNzoiR2FkZ2V0VHdvXEVjaG9lcnMiOj
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/12_tcp1pctf2023_web_unsecure/TCP1PCTF_Unsecure_7.png)
 
-### Explanation
+### Explanation (Lesson Learned)
 
-I really hope this solution is working. I'm interested to know if its possible to include `system()` or any function in PHP object.
+I really hope the solution by my team member (vicevirus) is working. I'm interested to know if its possible to include `system()` or any function in PHP object.
 
 ```php
 <?php
