@@ -123,12 +123,12 @@ namespace GadgetThree {
     }
 }
 
+```
+
 > __toString() - PHP call-back that gets executed if the object is treated like a string.
 {: .prompt-info }
 
 - In `GadgetThree`, even though there is a WAF but we can defined each of the variable accordingly to bypass it. Once we have bypass it, we can get our input which is `cmd` to `eval()` function.
-
-```
 
 ### Solution (1)
 
