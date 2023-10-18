@@ -130,7 +130,7 @@ namespace GadgetThree {
 
 - In `GadgetThree`, even though there is a WAF but we can defined each of the variable accordingly to bypass it. Once we have bypass it, we can get our input which is `cmd` to `eval()` function.
 
-### Solution (1)
+### Solution
 
 Based on the **Gadget** above, at first I only focus on the **GadgetThree** because it got `eval()` function. But I keep wondering how can I trigger the `__toString()` with only using **GadgetThree**? Like I mentioned above, it will only get executed if the object is treated like a **string**, but in our case it only `unserialize()` the object not `echo unserialize()`.
 
