@@ -1,5 +1,5 @@
 ---
-title: Intigriti CTF 2023 Writeup [WEB, PWN]
+title: Intigriti CTF 2023 Writeup [WEB]
 author: H0j3n
 date: 2023-11-19 00:00:00
 categories: [ctf]
